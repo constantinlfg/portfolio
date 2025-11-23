@@ -11,18 +11,21 @@ $html->appendToHead("\n    <link href='https://fonts.googleapis.com/css?family=L
 
 $html->appendContent(
     <<<HTML
-    <header>
-        <nav class="navbar">
-            <img class="logo" src="assets/img/logo.png" alt="logo"/>
-            <div class="menu">            
-                <a href="#comp" class="menu-item">Compétences</a>
-                <a href="#projet" class="menu-item">Projet</a>
-                <a href="#form" class="menu-item">Formation</a>
-                <a href="#contact" class="menu-item">Contact</a>
-            </div>
-
-        </nav>
-    </header>
+    <nav class="navbar">
+        <input type="checkbox" id="menu-toggle">
+        <img class="logo" src="assets/img/logo.png" alt="logo"/>
+        <ul class="menu">            
+            <li><a href="#comp" class="menu-item">Compétences</a></li>
+            <li><a href="#projet" class="menu-item">Projet</a></li>
+            <li><a href="#form" class="menu-item">Formation</a></li>
+            <li><a href="#contact" class="menu-item">Contact</a></li>
+        </ul>
+        <label for="menu-toggle" class="burger-button">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+        </label>
+    </nav>
     <main>
         <div class="bio">
             <h1>CONSTANTIN <br>LYFOUNG</br></h1>
@@ -51,7 +54,7 @@ $html->appendContent(
             <div class="group-content">
                 <a href="https://github.com/constantinlfg/portfolio" class="group-item">
                     <h2>Mon portfolio</h2>
-                    <p>Le code de ce portfolio est 100% de moi, sans IA. Une simple démonstration de mes compétences HTML et CSS.</p>
+                    <p>Code réaliser par mes soins. Une simple démonstration de mes compétences HTML et CSS.</p>
                 </a>
                 <a href="https://github.com/constantinlfg/game-library" class="group-item">
                     <h2>Web App de jeux vidéo</h2>
