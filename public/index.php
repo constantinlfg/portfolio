@@ -6,6 +6,9 @@ $html = new WebPage("Mon Portfolio");
 
 $html->appendCssUrl('css/style.css');
 
+$html->appendToHead("\n    <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
+                             \n    <link href='https://fonts.googleapis.com/css?family=Allerta' rel='stylesheet'>");
+
 $html->appendContent(
     <<<HTML
     <header>
