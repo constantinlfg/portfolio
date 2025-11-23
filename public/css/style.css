@@ -1,22 +1,31 @@
 html {
     background-color: #fffdf6;
     font-family: 'Allerta', sans-serif;
-    color: #344c4a;
+
 }
 a{
     text-decoration: none;
-    color: #344c4a;
+    color: #000000;
 }
 
 body{
+
     margin: 0px;
 }
-
-nav{
+header{
+    position: sticky;
+    top: 0;
+}
+nav {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-    border-style: solid;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px) saturate(200%);
+    -webkit-backdrop-filter: blur(12px) saturate(200%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
 
 .menu{
@@ -24,7 +33,15 @@ nav{
     width: 25%;
     justify-content: space-evenly;
 }
+.menu-item{
+    display: inline-block;
+    transition: color 0.4s ease, text-shadow 0.4s ease, transform 0.4s ease;
+}
+.menu-item:hover{
+    color: #344c4a;
 
+    transform: translateY(-2px) scale(1.1);
+}
 .logo{
     height: 100px;
 }
@@ -34,20 +51,28 @@ main{
     flex-direction: column;
     align-items: center;
 }
-
+h1{
+    font-family: 'League Spartan', sans-serif;
+    font-size: clamp(30px,12vw + 1rem,12rem);
+    margin-bottom: 5px;
+    text-align: center;
+}
 .bio{
     display: flex;
     flex-direction: column;
+
     align-items: center;
+    width: 100vh;
+    height: 100vh;
 }
 
-.competences{
+.group{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.group {
+.group-content {
     display: grid;
     grid-template-columns: auto auto auto;
     margin-left: 300px;
@@ -57,7 +82,7 @@ main{
     border-bottom-style: solid;
 }
 
-.competence{
+.group-item{
     padding: 30px;
     display: flex;
     flex-direction: column;
