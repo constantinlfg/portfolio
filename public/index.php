@@ -14,10 +14,13 @@ $html->appendContent(
     <header>
         <nav class="navbar">
             <img class="logo" src="assets/img/logo.png" alt="logo"/>
-            <a href="#comp" class="nav-item">Compétences</a>
-            <a href="#projet" class="nav-item">Projet</a>
-            <a href="#form" class="nav-item">Formation</a>
-            <a href="#contact" class="nav-item">Contact</a>
+            <div class="menu">            
+                <a href="#comp" class="nav-item">Compétences</a>
+                <a href="#projet" class="nav-item">Projet</a>
+                <a href="#form" class="nav-item">Formation</a>
+                <a href="#contact" class="nav-item">Contact</a>
+            </div>
+
         </nav>
     </header>
     <main>
@@ -29,18 +32,20 @@ $html->appendContent(
         </div>
         <div class="competences">
             <h1>COMPETENCES</h1>
-            <div class="competence">
-                <h2>Front</h2>
-                <p>Je suis passionné par le dev web. Je maitrise le HTML et le CSS.</p>
-            </div>
-            <div class="competence">
-                <h2>Back</h2>
-                <p>Je suis formé au dev objet : python, PhP, C++. Concernant les bases de données, je maitrise le SQL. Je suis formé au framework Symfony.</p>
-            </div>
-            <div class="competence">
-                <h2>Mes qualités</h2>
-                <p>Je suis quelqu'un sur qui vous pouvez compter, je rends toujours mes travaux dans les temps. Je suis également curieux, autonome et je m'adapte rapidement.
-                 J'apprécie apprendre de nouveau framework et langages.</p>
+            <div class="group">
+                <div class="competence">
+                    <h2>Front</h2>
+                    <p>Je suis passionné par le dev web. Je maitrise le HTML et le CSS.</p>
+                </div>
+                <div class="competence">
+                    <h2>Back</h2>
+                    <p>Je suis formé au dev objet : python, PhP, C++. Concernant les bases de données, je maitrise le SQL. Je suis formé au framework Symfony.</p>
+                </div>
+                <div class="competence">
+                    <h2>Mes qualités</h2>
+                    <p>Je suis quelqu'un sur qui vous pouvez compter, je rends toujours mes travaux dans les temps. Je suis également curieux, autonome et je m'adapte rapidement.
+                     J'apprécie apprendre de nouveau framework et langages.</p>
+                </div>
             </div>
         </div>
         <div class="projets">
