@@ -1,6 +1,7 @@
 html {
     background-color: #fffdf6;
     font-family: 'Allerta', sans-serif;
+    overflow-x: hidden;
 }
 a{
     text-decoration: none;
@@ -9,6 +10,16 @@ a{
 
 body{
     margin: 0px;
+    background-image: url("../assets/img/background.jpg");
+    /* 1. C'est cette ligne qui fait la magie : */
+    background-attachment: fixed;
+
+    /* 2. Indispensable pour que ça couvre bien l'écran */
+    background-size: cover;
+
+    /* 3. Pour que l'image soit bien centrée */
+    background-position: center;
+    background-repeat: no-repeat;
 }
 nav {
     position: sticky;
@@ -193,8 +204,8 @@ h1{
     width: 100%;
     height: 100vh;
 
-    background-image: linear-gradient(to bottom,transparent 0%, transparent 70%, white 100%), url("../assets/img/background.jpg");
-    background-size: cover;
+    /*background-image: linear-gradient(to bottom,transparent 0%, transparent 70%, white 100%), url("../assets/img/background.jpg");*/
+    /*background-size: cover;*/
 }
 
 .group{
