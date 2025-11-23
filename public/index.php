@@ -30,21 +30,24 @@ $html->appendContent(
         <div class="bio">
             <h1>CONSTANTIN <br>LYFOUNG</br></h1>
             <p>Étudiant en développement, front end & back end.</p>
+            <form>
+                <input class="dl" type="button" value="Télécharger mon CV" onClick="window.location.href='./assets/cv.pdf'"/>
+            </form>
         </div>
         <div class="group">
             <h1>COMPETENCES</h1>
             <div class="group-content">
                 <div class="group-item">
                     <h2>Front</h2>
-                    <p>Je suis passionné par le dev web. Je maitrise le HTML et le CSS.</p>
+                    <p>Je suis passionné par le dev web. Je maitrise le <span class="highlight">HTML et le CSS</span>.</p>
                 </div>
                 <div class="group-item">
                     <h2>Back</h2>
-                    <p>Je suis formé au dev objet : python, PhP, C++. Concernant les bases de données, je maitrise le SQL. Je suis formé au framework Symfony.</p>
+                    <p>Je suis formé au dev objet : <span class="highlight">python, PhP, C++</span>. Concernant les bases de données, je maitrise le <span class="highlight">SQL</span>. Je suis formé au <span class="highlight">framework Symfony</span>.</p>
                 </div>
                 <div class="group-item">
                     <h2>Mes qualités</h2>
-                    <p>Je suis quelqu'un sur qui vous pouvez compter, je rends toujours mes travaux dans les temps. Je suis également curieux, autonome et je m'adapte rapidement.
+                    <p>Je suis quelqu'un sur qui vous pouvez <span class="highlight">compter</span>, je rends toujours mes travaux <span class="highlight">dans les temps</span>. Je suis également <span class="highlight">curieux, autonome</span> et je <span class="highlight">m'adapte</span> rapidement.
                      J'apprécie apprendre de nouveau framework et langages.</p>
                 </div>
             </div>
@@ -52,16 +55,54 @@ $html->appendContent(
         <div class="group">
             <h1>PROJETS</h1>
             <div class="group-content">
-                <a href="https://github.com/constantinlfg/portfolio" class="group-item">
+                <div class="group-item">
                     <h2>Mon portfolio</h2>
-                    <p>Code réaliser par mes soins. Une simple démonstration de mes compétences HTML et CSS.</p>
-                </a>
-                <a href="https://github.com/constantinlfg/game-library" class="group-item">
+                    <p>Code réalisé par mes soins. Une simple démonstration de mes <span class="highlight">compétences HTML et CSS.</span></p>
+                    <a href="https://github.com/constantinlfg/portfolio"><p></p>Github</a>
+                </div>
+                <div class="group-item">
                     <h2>Web App de jeux vidéo</h2>
-                    <p>Il s'agit d'une webapp créer en binôme lors d'un projet universitaire. Nous devions créer une webapp de présentation de jeux vidéo. La base de données nous a été donnée. L'application a été codé en PhP pure sans framework. Le projet s'est étalé sur une semaine de travail.</p>
-                </a>
+                    <p>Il s'agit d'une <span class="highlight">webapp</span> créer en binôme lors d'un projet universitaire. Nous devions créer une webapp de présentation de jeux vidéo. La base de données nous a été donnée. L'application a été codé en <span class="highlight">PhP pure sans framework</span>. Le projet s'est étalé sur une semaine de travail.</p>
+                    <a href="https://github.com/constantinlfg/game-library"><p></p>Github</a>
+                </div>
+                <div class="group-item">
+                    <h2>Jeu de Solitaire</h2>
+                    <p>Mon premier projet universitaire pour lequel je devais coder un jeu de solitaire en python à l'aide de la <span class="highlight">bibliothèque pygame.</span></p>
+                    <a href="https://github.com/constantinlfg/sae1_pegsolitaire"><p></p>Github</a>
+                </div>
             </div>
         </div>
+        <div class="group">
+            <h1>FORMATION</h1>
+            <div class="group-content">
+                <div class="group-item">
+                    <h2>Baccalauréat Mention Bien</h2>
+                    <p><span class="highlight">2022-2023</span> | Lycée Edouart Herriot <span class="italic"><br><br>Spécialités : Mathématiques, Physique-Chimie</span></p>
+                </div>
+                <div class="group-item">
+                    <h2>1ère année en classe préparatoire intégrée en cycle d’ingénieur</h2>
+                    <p><span class="highlight">2023-2024</span> | Université de Technologie de Troyes</p>
+                </div>
+                <div class="group-item">
+                    <h2>BUT d’Informatique</h2>
+                    <p><span class="highlight">2024 à aujourd’hui</span> | IUT de Reims <span class="italic"><br><br>Première année validée</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="contact">
+
+            <h2>En recherche d'un stage de 8 semaines minimum</h2>
+            <p>Vous êtes en recherche de stagière ? Je suis disponible 
+            <span class="highlight">à tout moment.</span> 
+            <br>Envoyez-moi un message ou un mail pour me contacter !</p>
+            <a href="mailto:constantin.lfg.pro@gmail.com">constantin.lfg.pro@gmail.com</a>
+            <div class="links">
+                <a href="http://github.com/constantinlfg">Github</a>
+                <a href="https://www.linkedin.com/in/constantin-lyfoung-915449354/">Linkedin</a>
+            </div>
+            <p><span class="italic">©Constantin Lyfoung | 2025</span></p>
+        </div>
+                
     </main>
 HTML
 );
