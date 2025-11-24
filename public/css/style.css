@@ -260,9 +260,20 @@ h1{
     }
 }
 
-@media (max-width: 400px) {
-    p{
-        font-size: 13px;
+@media (max-width: 600px) {
+    .bio{
+        margin-top: 1vw;
+    }
+}
+
+@media (max-width: 440px) {
+    .bio p{
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .contact{
+        padding-right: 15px;
+        padding-left: 15px;
     }
 }
 
