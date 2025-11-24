@@ -13,7 +13,7 @@ $html->appendContent(
     <<<HTML
     <nav class="navbar">
         <input type="checkbox" id="menu-toggle">
-        <img class="logo" src="assets/img/logo.png" alt="logo"/>
+        <a href="#home"><img class="logo" src="assets/img/logo.png" alt="logo"/></a>
         <ul class="menu">            
             <li><a href="#comp" class="menu-item">Compétences</a></li>
             <li><a href="#projet" class="menu-item">Projet</a></li>
@@ -27,15 +27,15 @@ $html->appendContent(
         </label>
     </nav>
     <main>
-        <div class="bio">
+        <div class="bio" id="home">
             <h1>CONSTANTIN <br>LYFOUNG</br></h1>
             <p>Étudiant en développement, front end & back end.</p>
             <form>
                 <input class="dl" type="button" value="Télécharger mon CV" onClick="window.location.href='./assets/cv.pdf'"/>
             </form>
         </div>
-        <div class="group">
-            <h1>COMPETENCES</h1>
+        <div class="group" id="comp">
+            <h3>COMPETENCES</h3>
             <div class="group-content">
                 <div class="group-item">
                     <h2>Front</h2>
@@ -52,8 +52,8 @@ $html->appendContent(
                 </div>
             </div>
         </div>
-        <div class="group">
-            <h1>PROJETS</h1>
+        <div class="group" id="projet">
+            <h3>PROJETS</h3>
             <div class="group-content">
                 <div class="group-item">
                     <h2>Mon portfolio</h2>
@@ -72,8 +72,8 @@ $html->appendContent(
                 </div>
             </div>
         </div>
-        <div class="group">
-            <h1>FORMATION</h1>
+        <div class="group" id="form">
+            <h3>FORMATION</h3>
             <div class="group-content">
                 <div class="group-item">
                     <h2>Baccalauréat Mention Bien</h2>
@@ -89,7 +89,7 @@ $html->appendContent(
                 </div>
             </div>
         </div>
-        <div class="contact">
+        <div class="contact" id="contact">
 
             <h2>En recherche d'un stage de 8 semaines minimum</h2>
             <p>Vous êtes en recherche de stagière ? Je suis disponible 
