@@ -1,23 +1,111 @@
+/* =========================================
+   1. VARIABLES & CONFIGURATION
+   ========================================= */
+   :root {
+    /* Couleurs */
+    --bg-color: #fffdf6;
+    --text-color: #000000;
+    --accent-pink: #b5779d;
+    --accent-purple: #9c80c1;
+    --burger-color: #b5779d;
+    --link-color: #adbfce;
+
+    /* Polices */
+    --font-body: 'Allerta', sans-serif;
+    --font-title: 'League Spartan', sans-serif;
+
+    /* Effet Glassmorphism (Verre) */
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-filter: blur(15px) saturate(200%);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+    /* Animations */
+    --transition-standard: all 0.3s ease;
+    --transition-hover: color 0.4s ease, transform 0.4s ease;
+}
+
+/* =========================================
+   2. BASE & RESET
+   ========================================= */
 html {
-    background-color: #fffdf6;
-    font-family: 'Allerta', sans-serif;
+    background-color: var(--bg-color);
+    font-family: var(--font-body);
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
-a{
-    text-decoration: none;
-    color: #000000;
-}
 
-body{
+body {
     margin: 0;
-    padding-bottom: 0px;
+    padding-bottom: 0;
     background-image: url("../assets/img/background.jpg");
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: var(--transition-standard);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* =========================================
+   3. CLASSES UTILITAIRES (DRY)
+   ========================================= */
+.glass-effect {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-filter);
+    border: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+
+.hover-lift {
+    transition: var(--transition-hover);
+}
+
+.hover-lift:hover {
+    color: var(--accent-purple);
+    transform: translateY(-2px) scale(1.1);
+}
+
+/* =========================================
+   4. TYPOGRAPHIE
+   ========================================= */
+h1, h3 {
+    font-family: var(--font-title);
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+h1 {
+    font-size: clamp(30px, 10vw + 1rem, 12rem);
+}
+
+h3 {
+    font-size: clamp(30px, 3vw + 1rem, 12rem);
+}
+
+.highlight {
+    color: var(--accent-pink);
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+/* =========================================
+   5. COMPOSANTS PRINCIPAUX
+   ========================================= */
+/* --- Navigation --- */
 nav {
     position: sticky;
     top: 0;
@@ -28,170 +116,56 @@ nav {
     width: 800px;
     margin: 0 auto;
     border-radius: 10px;
-
     animation: effet-verre linear both;
     animation-timeline: scroll(root);
     animation-range: 0 15vw;
 }
 
-@media (max-width: 850px){
-    nav{width: 95vw;}
+.logo {
+    height: 70px;
 }
 
-@keyframes effet-verre {
-    to {
-        background: rgba(255, 255, 255, 0.3);
-        backdrop-filter: blur(18px) saturate(200%);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow:
-                0 10px 30px rgba(0,0,0,0.2),
-                inset 0 1px 0 rgba(255,255,255,0.8);
-
-        transform: translateY(0.5vw);
-    }
-}
-#menu-toggle {
-    display: none;
-}
-/* --- 2. STYLE DU BOUTON BURGER (Base) --- */
-.burger-button {
-    display: none; /* Caché sur PC */
-    cursor: pointer;
-    flex-direction: column;
-    gap: 5px;
-    z-index: 2000; /* Toujours au-dessus */
-}
-
-.burger-button .line {
-    width: 25px;
-    height: 3px;
-    background-color: #344c4a;
-    border-radius: 5px;
-    transition: all 0.3s ease; /* Pour l'animation en X */
-}
-
-.menu{
+.menu {
     display: flex;
     width: 60%;
     justify-content: space-evenly;
     list-style: none;
 }
-.menu-item{
-    font-family: 'League Spartan', sans-serif;
+
+.menu-item {
+    font-family: var(--font-title);
     font-size: 25px;
     display: inline-block;
-    transition: color 0.4s ease, text-shadow 0.4s ease, transform 0.4s ease;
+    transition: var(--transition-hover), text-shadow 0.4s ease;
 }
-.menu-item:hover{
-    color: #344c4a;
+
+.menu-item:hover {
+    color: var(--accent-purple);
     transform: translateY(-2px) scale(1.1);
 }
 
-
-/* --- VERSION MOBILE (Tablettes et Mobiles) --- */
-@media screen and (max-width: 800px) {
-    nav{
-        animation: none !important;
-        transform: none !important;
-        justify-content: space-around;
-        background: rgba(255, 253, 246);
-
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow:
-                0 10px 30px rgba(0,0,0,0.2),
-                inset 0 1px 0 rgba(255,255,255,0.8);
-        width: 100%;
-
-    }
-    /* 1. Afficher le bouton burger */
-    .burger-button {
-        display: flex;
-    }
-
-    /* 2. LE MENU DÉROULANT (Style Liquid Glass) */
-
-    .menu {
-        /* DANS LA MEDIA QUERY @media (max-width: 850px) */
-        background: rgba(255, 253, 246, 0.4);
-        backdrop-filter: blur(15px) saturate(200%);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow:
-                0 10px 30px rgba(0,0,0,0.2),
-                inset 0 1px 0 rgba(255,255,255,0.8);
-        /* DANS LA MEDIA QUERY MOBILE */
-
-        position: absolute;
-        top: 100%; /* Collé juste sous la barre */
-        right: 0;
-
-        border-radius: 15px; /* Arrondi seulement en bas */
-
-        /* Mise en page */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
-        gap: 15px;
-
-        /* Animation */
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: all 0.3s ease-in-out;
-        z-index: 1000;
-    }
-
-    /* Style des liens */
-    .menu-item {
-        color: rgba(0, 0, 0);
-        font-size: 1.2rem;
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
-    }
-
-    /* Petit effet au survol des liens dans le menu */
-    .menu-item:hover {
-        transform: scale(1.05);
-    }
-
-    /* --- 3. L'OUVERTURE DU MENU (Checked) --- */
-    #menu-toggle:checked ~ .menu {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0); /* Il descend à sa place */
-    }
-
-    /* --- 4. ANIMATION DU BURGER (En croix) --- */
-    #menu-toggle:checked ~ .burger-button .line1 {
-        transform: rotate(45deg) translate(5px, 6px);
-        background-color: #344c4a; /* S'assure qu'on voit bien la croix */
-    }
-    #menu-toggle:checked ~ .burger-button .line2 {
-        opacity: 0;
-    }
-    #menu-toggle:checked ~ .burger-button .line3 {
-        transform: rotate(-45deg) translate(5px, -6px);
-        background-color: #344c4a;
-    }
+#menu-toggle {
+    display: none;
 }
 
-.logo{
-    height: 70px;
-}
-
-main{
-    display: flex;
+.burger-button {
+    display: none; /* Caché sur PC */
+    cursor: pointer;
     flex-direction: column;
-    align-items: center;
+    gap: 5px;
+    z-index: 2000;
 }
-h1{
-    font-family: 'League Spartan', sans-serif;
-    font-size: clamp(30px,10vw + 1rem,12rem);
-    margin-bottom: 5px;
-    text-align: center;
+
+.burger-button .line {
+    width: 25px;
+    height: 3px;
+    background-color: var(--burger-color);
+    border-radius: 5px;
+    transition: var(--transition-standard);
 }
-.bio{
+
+/* --- Sections --- */
+.bio {
     margin-top: -100px;
     padding-top: 100px;
     display: flex;
@@ -199,132 +173,65 @@ h1{
     align-items: center;
     width: 100%;
     height: 100vh;
-
-    /*background-image: linear-gradient(to bottom,transparent 0%, transparent 70%, white 100%), url("../assets/img/background.jpg");*/
-    /*background-size: cover;*/
 }
 
-.group{
-    padding-top: 3vw;
+.group {
+    padding-top: 20vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    margin-bottom: 25vh;
 }
 
 .group-content {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin-left: 15vw;
-    margin-right: 15vw;
-    column-gap: 20px;
-    row-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 15vw;
+    gap: 20px;
 }
 
-
-
-.group-item{
-    gap: 0;
+.group-item {
     padding: 20px;
     display: grid;
     grid-template-rows: subgrid;
     grid-row: span 3;
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(15px) saturate(200%);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow:
-            0 10px 30px rgba(0,0,0,0.2),
-            inset 0 1px 0 rgba(255,255,255,0.8);
     border-radius: 15px;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-filter);
+    border: var(--glass-border);
+    box-shadow: var(--glass-shadow);
 }
 
-@media (max-width: 1280px) {
-    .group-content{
-        grid-template-columns: 1fr 1fr;
-        row-gap: 20px;
-    }
-}
-
-@media (max-width: 1000px) {
-    .group-content{
-        margin-left: 5vw;
-        margin-right: 5vw;
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 800px) {
-    .group-content{
-        margin-left: 15vw;
-        margin-right: 15vw;
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 600px) {
-    .bio{
-        margin-top: 1vw;
-    }
-}
-
-@media (max-width: 440px) {
-    .bio p{
-        padding-right: 15px;
-        padding-left: 15px;
-    }
-    .contact{
-        padding-right: 15px;
-        padding-left: 15px;
-    }
-}
-
-
-.group-item a{
+.group-item a {
     margin: auto;
     height: 55px;
     width: 150px;
-    text-align: center;
-    background: #adbfce;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow:
-            0 10px 30px rgba(0,0,0,0.2),
-            inset 0 1px 0 rgba(255,255,255,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    border: var(--glass-border);
+    box-shadow: var(--glass-shadow);
     border-radius: 30px;
-    transition: color 0.4s ease, transform 0.4s ease;
+    transition: var(--transition-hover);
 }
 
-.group-item a:hover{
-    color: #9c80c1;
+.group-item a:hover {
+    color: var(--accent-purple);
     transform: translateY(-2px) scale(1.1);
 }
 
-.dl{
+/* --- Boutons et divers --- */
+.dl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 20px;
-    font-family: 'League Spartan', sans-serif;
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(15px) saturate(200%);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow:
-            0 10px 30px rgba(0,0,0,0.2),
-            inset 0 1px 0 rgba(255,255,255,0.8);
+    font-family: var(--font-title);
     border-radius: 60px;
     height: 70px;
     width: 200px;
-    transition: color 0.4s ease, transform 0.4s ease;
     margin-top: 50px;
-}
-
-.dl:hover{
-    color: #9c80c1;
-    transform: translateY(-2px) scale(1.1);
-}
-
-.highlight{
-    color: #9c80c1;
-}
-
-.italic{
-    font-style: italic;
 }
 
 .contact {
@@ -335,32 +242,214 @@ h1{
     align-items: center;
     margin-top: 50px;
     padding-bottom: 10px;
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(15px) saturate(200%);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow:
-            0 10px 30px rgba(0,0,0,0.2),
-            inset 0 1px 0 rgba(255,255,255,0.8);
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     width: 100%;
 }
-.links{
-    font-weight: bold;
-    color: #adbfce;
-}
 
-.contact a{
+.contact a {
     transition: color 0.4s ease;
 }
-.contact a:hover{
-    color: #9c80c1;
-}
-h3{
-    font-family: 'League Spartan', sans-serif;
-    font-size: clamp(30px,3vw + 1rem,12rem);
-    margin-bottom: 5px;
-    text-align: center;
+
+.contact a:hover {
+    color: var(--accent-purple);
 }
 
+.links {
+    font-weight: bold;
+    color: var(--link-color);
+}
 
+.scroll-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    width: 70px;
+    height: 70px;
+    color: var(--accent-pink);
+    border-radius: 50%;
+}
+
+.scroll-arrow svg {
+    margin-top: 5px;
+    animation: bounce 2s infinite;
+}
+
+/* --- Marquee (Bandeau défilant) --- */
+.marquee-container {
+    margin-top: 10vh;
+    width: 100vw;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+    margin-bottom: 5vh;
+}
+
+.marquee-track {
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    animation: scroll-marquee 20s linear infinite;
+}
+
+.marquee-item {
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    color: var(--accent-pink);
+    padding: 15px 35px;
+    border-radius: 50px;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-filter);
+    border: var(--glass-border);
+    transition: var(--transition-hover);
+}
+
+.marquee-item:hover {
+    color: var(--accent-purple);
+}
+
+/* =========================================
+   6. ANIMATIONS
+   ========================================= */
+@keyframes effet-verre {
+    to {
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(18px) saturate(200%);
+        border: var(--glass-border);
+        box-shadow: var(--glass-shadow);
+        transform: translateY(0.5vw);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(8px); }
+    60% { transform: translateY(4px); }
+}
+
+@keyframes scroll-marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 15px)); }
+}
+
+/* =========================================
+   7. MEDIA QUERIES (Responsive)
+   ========================================= */
+@media (max-width: 1280px) {
+    .group-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1000px) {
+    .group-content {
+        margin-left: 5vw;
+        margin-right: 5vw;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 850px) {
+    nav {
+        width: 95vw;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    /* Navigation Mobile */
+    nav {
+        animation: none !important;
+        transform: none !important;
+        justify-content: space-around;
+        background: rgba(255, 253, 246, 1);
+        border: var(--glass-border);
+        box-shadow: var(--glass-shadow);
+        width: 100%;
+    }
+
+    .burger-button {
+        display: flex;
+    }
+
+    .menu {
+        background: rgba(255, 253, 246, 0.4);
+        backdrop-filter: var(--glass-filter);
+        border: var(--glass-border);
+        box-shadow: var(--glass-shadow);
+        position: absolute;
+        top: calc(100%);
+        right: 0;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 15px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease-in-out;
+        z-index: 1000;
+    }
+
+    .menu-item {
+        color: rgba(0, 0, 0, 1);
+        font-size: 1.2rem;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .menu-item:hover {
+        transform: scale(1.05);
+    }
+
+    /* Comportement du Menu Burger (Checked) */
+    #menu-toggle:checked ~ .menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    #menu-toggle:checked ~ .burger-button .line1 {
+        transform: rotate(45deg) translate(5px, 6px);
+        background-color: var(--burger-color);
+    }
+
+    #menu-toggle:checked ~ .burger-button .line2 {
+        opacity: 0;
+    }
+
+    #menu-toggle:checked ~ .burger-button .line3 {
+        transform: rotate(-45deg) translate(5px, -6px);
+        background-color: var(--burger-color);
+    }
+
+    /* Layout Mobile */
+    .group-content {
+        margin-left: 15vw;
+        margin-right: 15vw;
+        grid-template-columns: 1fr;
+    }
+
+    .group {
+        padding-top: 10vh;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .bio {
+        margin-top: 1vw;
+    }
+}
+
+@media (max-width: 440px) {
+    .bio p, .contact {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
