@@ -49,7 +49,7 @@
             <div class="group-content">
                 <div class="group-item">
                     <h2>Front</h2>
-                    <p>Je suis passionné par le dev web. Je maitrise le <span class="highlight">HTML et le CSS</span>. Je me forme actuellemnt au JavaScript, notemment à la bibliothèque <span class="highlight">React</span>.</p>
+                    <p>Je suis passionné par le dev web. Je maitrise le <span class="highlight">HTML et le CSS</span>. Je me forme actuellement au JavaScript, notemment à la bibliothèque <span class="highlight">React</span>.</p>
                 </div>
                 <div class="group-item">
                     <h2>Back</h2>
@@ -157,9 +157,26 @@
                 <a href="http://github.com/constantinlfg">Github</a>
                 <a href="https://www.linkedin.com/in/constantin-lyfoung-915449354/">Linkedin</a>
             </div>
-            <p><span class="italic">©Constantin Lyfoung | 2025</span></p>
+            <p><span class="italic">© 2025 Constantin Lyfoung - Tous droits réservés.</span></p>
+            <p><a href="legal.html">Mentions Légales</a></p>
         </div>
                 
     </main>  
+    <a href="#home" class="back-to-top glass-effect hover-lift" id="backToTop" aria-label="Remonter tout en haut">
+        <svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 11L12 6L7 11M17 18L12 13L7 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+
+    <script>
+        const backToTopButton = document.getElementById("backToTop");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add("show");
+            } else {
+                backToTopButton.classList.remove("show");
+            }
+        });
+    </script>
 </body>
 </html>
