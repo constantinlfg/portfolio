@@ -17,10 +17,10 @@
     <nav>
         <input type="checkbox" id="menu-toggle">
         <a href="#home"><img class="logo" src="assets/img/pinklogo.png" alt="logo"/></a>
-        <ul class="menu">            
-            <li><a href="#comp" class="menu-item">Compétences</a></li>
+        <ul class="menu">    
+            <li><a href="#form" class="menu-item">Formation</a></li>        
             <li><a href="#projet" class="menu-item">Projet</a></li>
-            <li><a href="#form" class="menu-item">Formation</a></li>
+            <li><a href="#comp" class="menu-item">Compétences</a></li>
             <li><a href="#contact" class="menu-item">Contact</a></li>
         </ul>
         <label for="menu-toggle" class="burger-button">
@@ -33,100 +33,21 @@
     <main>
         <div class="bio" id="home">
             <h1>CONSTANTIN <br>LYFOUNG</h1>
-            <p>Étudiant en développement, front end & back end.</p>
-            <form>
-                <input class="dl glass-effect hover-lift" type="button" value="Télécharger mon CV" onClick="window.location.href='./assets/cv.pdf'"/>
-            </form>
-            <a href="#comp" class="scroll-arrow glass-effect hover-lift" aria-label="Scroller vers le bas">
+            <p>Étudiant développeur full-stack. Je poursuis actuellement un BUT Informatique à l'IUT de Reims. <br>Pianiste à mes heures perdues. Vous pouvez retrouver mes arangements <a class="links" href="https://musescore.com/user/22190431">ici.</a></p>
+            
+            <div class="bio-links">
+                <a class="hover-lift" href="https://github.com/constantinlfg"><img height=65 width=65 src="assets/img/GitHub_Invertocat_Black.svg"></a>
+                <form>
+                    <input class="dl glass-effect hover-lift" type="button" value="Télécharger mon CV" onClick="window.location.href='./assets/cv.pdf'"/>
+                </form>
+                
+            </div>
+            <a href="#form" class="scroll-arrow glass-effect hover-lift" aria-label="Scroller vers le bas">
                 <svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6 10L12 16L18 10M6 4L12 10L18 4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </a>
-        </div>
-        
-        <div class="group" id="comp">
-            <h3>STACKS TECHNIQUES</h3>
-            <div class="group-content">
-                <div class="group-item">
-                    <h2>Front</h2>
-                    <p>Je suis passionné par le dev web. Je maitrise le <span class="highlight">HTML et le CSS</span>. Je me forme actuellement au JavaScript, notemment à la bibliothèque <span class="highlight">React</span>.</p>
-                </div>
-                <div class="group-item">
-                    <h2>Back</h2>
-                    <p>Je suis formé au dev objet : <span class="highlight">python, PhP, C++</span>. Concernant les bases de données, je maitrise le <span class="highlight">SQL</span>. Je suis formé au <span class="highlight">framework Symfony</span>.</p>
-                </div>
-                <div class="group-item">
-                    <h2>Mes qualités</h2>
-                    <p>Je suis quelqu'un sur qui vous pouvez <span class="highlight">compter</span>, je rends toujours mes travaux <span class="highlight">dans les temps</span>. Je suis également <span class="highlight">curieux, autonome</span> et je <span class="highlight">m'adapte</span> rapidement. J'apprécie apprendre de nouveau framework et langages.</p>
-                </div>
-            </div>
-            
-            <div class="marquee-container">
-                <div class="marquee-track">
-                    <div class="marquee-item">HTML5</div>
-                    <div class="marquee-item">CSS3</div>
-                    <div class="marquee-item">JavaScript</div>
-                    <div class="marquee-item">Python</div>
-                    <div class="marquee-item">PHP</div>
-                    <div class="marquee-item">Symfony</div>
-                    <div class="marquee-item">SQL</div>
-                    <div class="marquee-item">C++</div>
-                    <div class="marquee-item">Git</div>
-                    <div class="marquee-item">HTML5</div>
-                    <div class="marquee-item">CSS3</div>
-                    <div class="marquee-item">JavaScript</div>
-                    <div class="marquee-item">Python</div>
-                    <div class="marquee-item">PHP</div>
-                    <div class="marquee-item">Symfony</div>
-                    <div class="marquee-item">SQL</div>
-                    <div class="marquee-item">C++</div>
-                    <div class="marquee-item">Git</div>
-                    <div class="marquee-item">HTML5</div>
-                    <div class="marquee-item">CSS3</div>
-                    <div class="marquee-item">JavaScript</div>
-                    <div class="marquee-item">Python</div>
-                    <div class="marquee-item">PHP</div>
-                    <div class="marquee-item">Symfony</div>
-                    <div class="marquee-item">SQL</div>
-                    <div class="marquee-item">C++</div>
-                    <div class="marquee-item">Git</div>
-                    <div class="marquee-item">HTML5</div>
-                    <div class="marquee-item">CSS3</div>
-                    <div class="marquee-item">JavaScript</div>
-                    <div class="marquee-item">Python</div>
-                    <div class="marquee-item">PHP</div>
-                    <div class="marquee-item">Symfony</div>
-                    <div class="marquee-item">SQL</div>
-                    <div class="marquee-item">C++</div>
-                    <div class="marquee-item">Git</div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="group" id="projet">
-            <h3>PROJETS</h3>
-            <div class="group-content">
-                <div class="group-item">
-                    <h2>Mon portfolio</h2>
-                    <p>Code réalisé par mes soins. Une simple démonstration de mes <span class="highlight">compétences HTML et CSS.</span></p>
-                    <a href="https://github.com/constantinlfg/portfolio/tree/deploy"><p></p>Github</a>
-                </div>
-                <div class="group-item">
-                    <h2>Web App de jeux vidéo</h2>
-                    <p>Il s'agit d'une <span class="highlight">webapp</span> créer en binôme lors d'un projet universitaire. Nous devions créer une webapp de présentation de jeux vidéo. La base de données nous a été donnée. L'application a été codé en <span class="highlight">PhP natif</span>. Le projet s'est étalé sur une semaine de travail.</p>
-                    <a href="https://github.com/constantinlfg/game-library"><p></p>Github</a>
-                </div>
-                <div class="group-item">
-                    <h2>Jeu de Solitaire</h2>
-                    <p>Mon premier projet universitaire pour lequel je devais coder un jeu de solitaire en python à l'aide de la <span class="highlight">bibliothèque pygame.</span></p>
-                    <a href="https://github.com/constantinlfg/sae1_pegsolitaire"><p></p>Github</a>
-                </div>
-                <div class="group-item">
-                    <h2>CoLive</h2>
-                    <p>Colive est une application web de colocation qui cherche à mettre en relation plusieurs utilisateurs entre eux. C'est un projet de groupe qui utilise le framework <span class="highlight">Symfony</span> de Php. Nous sommes passés par toutes les étapes de la recherche de besoin du client à la création de la base de données.</p>
-                    <a href="https://github.com/constantinlfg/CoLive"><p></p>Github</a>
-                </div>
-            </div>
+
         </div>
         
         <div class="group" id="form">
@@ -146,16 +67,83 @@
                 </div>
             </div>
         </div>
+
+        <div class="group" id="projet">
+            <h3>PROJETS</h3>
+            <div class="group-content">
+                <div class="group-item">
+                    <div class="group-item-top">
+                        <h2>Mon portfolio</h2>
+                        <div class="group-item-logos">
+                            <img src="assets/img/HTML5_Logo.svg"/>
+                            <img src="assets/img/CSS3_logo.svg.png"/>
+                        </div>
+                    </div>
+                    <p>Code réalisé par mes soins. Une simple démonstration de mes <span class="highlight">compétences HTML et CSS.</span></p>
+                    <a href="https://github.com/constantinlfg/portfolio/tree/deploy"><p></p>Github</a>
+                </div>
+                <div class="group-item">
+                    <div class="group-item-top">
+                        <h2>Web App de jeux vidéo</h2>
+                        <div class="group-item-logos">
+                            <img src="assets/img/new-php-logo.svg"/>
+                        </div>
+                    </div>
+                    <p>Il s'agit d'une <span class="highlight">webapp</span> créer en binôme lors d'un projet universitaire. Nous devions créer une webapp de présentation de jeux vidéo. La base de données nous a été donnée. L'application a été codé en <span class="highlight">PhP natif</span>. Le projet s'est étalé sur une semaine de travail.</p>
+                    <a href="https://github.com/constantinlfg/game-library"><p></p>Github</a>
+                </div>
+                <div class="group-item">
+                    <div class="group-item-top">
+                        <h2>Jeu de Solitaire</h2>
+                        <div class="group-item-logos">
+                            <img src="assets/img/python-logo-only.svg"/>
+                        </div>
+                    </div>
+                    <p>Mon premier projet universitaire pour lequel je devais coder un jeu de solitaire en python à l'aide de la <span class="highlight">bibliothèque pygame.</span></p>
+                    <a href="https://github.com/constantinlfg/sae1_pegsolitaire"><p></p>Github</a>
+                </div>
+                <div class="group-item">
+                    <div class="group-item-top">
+                        <h2>CoLive</h2>
+                        <div class="group-item-logos">
+                            <img src="assets/img/new-php-logo.svg"/>
+                            <img src="assets/img/symfony_black_03.png"/>
+                        </div>
+                    </div>
+                    <p>Colive est une application web de colocation qui cherche à mettre en relation plusieurs utilisateurs entre eux. C'est un projet de groupe qui utilise le framework <span class="highlight">Symfony</span> de Php. Nous sommes passés par toutes les étapes de la recherche de besoin du client à la création de la base de données.</p>
+                    <a href="https://github.com/constantinlfg/CoLive"><p></p>Github</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="group" id="comp">
+            <h3>STACKS TECHNIQUES</h3>
+            <div class="stacks">
+                <div class="stack"><img src="assets/img/Bootstrap_logo.svg" alt="Bootstrap">Bootstrap</div>
+                <div class="stack"><img src="assets/img/CSS3_logo.svg.png" alt="css">CSS</div>
+                <div class="stack"><img src="assets/img/icon_flutter.817b4a56b047d0d36b338dd9ffd44dbd.svg" alt="Flutter">Flutter</div>
+                <div class="stack"><img src="assets/img/HTML5_Logo.svg" alt="html">HTML</div>
+                <div class="stack"><img src="assets/img/JavaScript-logo.png" alt="JavaScript">JavaScript</div>
+                <div class="stack"><img src="assets/img/ISO_C++_Logo.svg" alt="C++">C++</div>
+                <div class="stack"><img src="assets/img/new-php-logo.svg" alt="php">PHP</div>
+                <div class="stack"><img src="assets/img/python-logo-only.svg" alt="python">Python</div>
+                <div class="stack"><img src="assets/img/React-icon.svg" alt="React">React</div>
+                <div class="stack"><img src="assets/img/symfony_black_03.png" alt="Symfony">Symfony</div>
+                <div class="stack"><img src="assets/img/MySQL.svg" alt="MySQL"></div>
+                <div class="stack"><img src="assets/img/oracle-corporation-logo-png_seeklogo-406359.png" alt="Oracle">Oracle</div>
+                <div class="stack"><img src="assets/img/Git-Icon-1788C.svg" alt="Git">Git</div>
+            </div>
+        </div>
         
         <div class="contact glass-effect" id="contact">
             <h2>En recherche d'un stage de 8 semaines minimum</h2>
             <p>Vous êtes en recherche de stagière ? Je suis disponible 
             <span class="highlight">à tout moment.</span> 
             <br>Envoyez-moi un message ou un mail pour me contacter !</p>
-            <a href="mailto:constantin.lfg.pro@gmail.com">constantin.lfg.pro@gmail.com</a>
-            <div class="links">
-                <a href="http://github.com/constantinlfg">Github</a>
-                <a href="https://www.linkedin.com/in/constantin-lyfoung-915449354/">Linkedin</a>
+            <a class="links" href="mailto:constantin.lfg.pro@gmail.com">constantin.lfg.pro@gmail.com</a>
+            <div class="contact-links">
+                <a href="https://github.com/constantinlfg"><img height=65 width=65 src="assets/img/GitHub_Invertocat_Black.svg"></a>
+                <a href="https://www.linkedin.com/in/constantin-lyfoung-915449354/"><img height=65 width=65 src="assets/img/InBug-Black.png"></a>
             </div>
             <p><span class="italic">© 2025 Constantin Lyfoung - Tous droits réservés.</span></p>
             <p><a href="legal.html">Mentions Légales</a></p>
