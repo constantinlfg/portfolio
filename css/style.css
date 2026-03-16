@@ -276,6 +276,7 @@ nav {
 
 .links {
     font-weight: bold;
+    text-decoration: underline;
 }
 
 .links:hover {
